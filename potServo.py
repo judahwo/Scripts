@@ -1,5 +1,5 @@
 # Description: This program will read the analog value from the potentiometer
-# and use that value to control the duty cycle of the PWM signal to the servo
+# and uses that value to control the duty cycle of the PWM signal to the servo
 
 # Import the libraries
 import RPi.GPIO as GPIO
@@ -18,7 +18,7 @@ ADC0834.setup()
 try:
     while True:
         analogVal = ADC0834.getResult(0)        # Read the analog value
-        pwmPercent = 10/255*(analogVal)     # Convert to percent duty cycle
+        pwmPercent = 10/255*(analogVal)         # Convert to percent duty cycle
         print(pwmPercent)
         pwm.ChangeDutyCycle(pwmPercent)         # Set the duty cycle
         sleep(.1)
@@ -27,3 +27,4 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     print('GPIO Clean')
+    
