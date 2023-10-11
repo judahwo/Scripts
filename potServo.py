@@ -27,4 +27,3 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     print('GPIO Clean')
-    
